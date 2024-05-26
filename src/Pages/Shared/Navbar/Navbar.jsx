@@ -56,8 +56,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end lg:flex hidden">
-          <li className='list-none' ><Link className='text-lg font-semibold font-poppins'>Login</Link></li>
-          <a className="btn bg-neutral-600 text-lg font-semibold font-poppins text-white mx-2 ">Register</a>
+          <li className='list-none' ><Link className='text-lg font-semibold font-poppins' to='/login'>Login</Link></li>
+          <Link to='/register' className="btn bg-neutral-600 text-lg font-semibold font-poppins text-white mx-2 ">Register</Link>
         </div>
       </div>
     );
