@@ -1,10 +1,11 @@
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import { AuthContext } from '../Provider/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { FcGoogle } from 'react-icons/fc';
+import { AuthContext } from '../Provider/AuthProvider';
 // import { FcGoogle } from "react-icons/fc";
 // import { FaGithub } from "react-icons/fa";
 
@@ -12,40 +13,40 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 // import lot1 from   '../../../public/Animation - 1713676970388.json'
 // import { Helmet } from 'react-helmet-async';
 const Login = () => {
-//   const {createLogin,goolgeLogin,githubLogin}=useContext(AuthContext)
+  const {createLogin,goolgeLogin,githubLogin}=useContext(AuthContext)
   const [showPassword,setShowPassword]=useState(false)
-// const location=useLocation()
-// const navigate=useNavigate()
+const location=useLocation()
+const navigate=useNavigate()
   const { register, handleSubmit, formState: { errors },reset } = useForm();
     const onSubmit = data =>{
         console.log(data)
-        // const {Email,password}=data
-        // createLogin(Email,password)
-        // .then((result)=>{
-        //     console.log(result.user)
-        //     toast.success("User Logged in Successfully")
-        //     navigate(location?.state? location.state:'/')
-        //     reset()
-        // })
-        // .catch(error=>{
-        //     console.log(error)
-        //     toast.warn(error.message +'Give valid email and password')
+        const {Email,password}=data
+        createLogin(Email,password)
+        .then((result)=>{
+            console.log(result.user)
+            toast.success("User Logged in Successfully")
+            navigate(location?.state? location.state:'/')
+            reset()
+        })
+        .catch(error=>{
+            console.log(error)
+            toast.warn(error.message +'Give valid email and password')
          
-        // })
+        })
       }
 
-    //   const socialLogin=(social)=>{
-    //     social()
-    //     .then((result)=>{
-    //         console.log(result.user)
-    //         toast.success("User Logged in Successfully")
-    //         navigate(location?.state? location.state:'/')
-    //     })
-    //     .catch(error=>{
-    //         console.log(error)
-    //         toast.warn(error.message +'Give valid email and password')
-    //     })
-    //   }
+      const socialLogin=(social)=>{
+        social()
+        .then((result)=>{
+            console.log(result.user)
+            toast.success("User Logged in Successfully")
+            navigate(location?.state? location.state:'/')
+        })
+        .catch(error=>{
+            console.log(error)
+            toast.warn(error.message +'Give valid email and password')
+        })
+      }
     return (
    <div>
     {/* <Navbar></Navbar> */}
@@ -95,12 +96,14 @@ const Login = () => {
       <input type="submit" value="Sign In"   className='btn btn-outline btn-accent w-full  sm:text-2xl text-balance font-poppins   text-[#2b2d30] duration-500  '/>
       <p className='dark:text-white'>Do not have an account?Please <Link to='/register' className='btn-link text-lg font-sora font-bold'>Register</Link></p>
     </form>
+    
   
      </div>
-     {/* <div className='border-2 p-3 rounded-3xl text-center w-full  md:w-full lg:w-1/2 mx-auto mt-4 border-gray-300 flex justify-center items-center space-x-4 duration-500 hover:bg-[#6e85d5] hover:border hover:border-green-600 cursor-pointer'>
+     <div className='border-2 p-3 rounded-3xl text-center w-full  md:w-full lg:w-1/2 mx-auto mt-4 border-gray-300 flex justify-center items-center space-x-4 duration-500 hover:bg-[#6e85d5] hover:border hover:border-green-600 cursor-pointer'>
      <FcGoogle className='text-2xl' />
       <h1 className='font-bold text-[#2F3D7E] font-sora text-center  text-sm sm:text-base dark:text-white ' onClick={()=>socialLogin(goolgeLogin)}>Continue With Google</h1>
-     </div> */}
+     </div>
+   
      {/* <div className='border-2 p-3 rounded-3xl text-center w-full md:w-full lg:w-1/2 mx-auto mt-4 border-gray-300 flex justify-center items-center space-x-4 text-sm sm:text-base duration-500  hover:bg-[#6e85d5] hover:border hover:border-green-600 cursor-pointer'>
      <FaGithub className='text-2xl dark:text-white ' />
       <h1 className='font-bold text-[#2F3D7E] font-sora text-center dark:text-white' onClick={()=>socialLogin(githubLogin)}>Continue With Github</h1>

@@ -1,17 +1,18 @@
 import {React, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../public/download.svg'
-// import { AuthContext } from './../../Provider/AuthProvider';
+import { AuthContext } from '../../Provider/AuthProvider';
+
 // import { FaShoppingCart } from "react-icons/fa";
 // import useCart from '../../../Hooks/useCart';
 const Navbar = () => {
-//   const {user,logOut}= useContext(AuthContext)
+  const {user,logOut}= useContext(AuthContext)
 
-//   const handleLogout=()=>{
-//     logOut()
-//     .then(()=> {})
-//     .catch(error => console.log(error))
-//   }
+  const handleLogout=()=>{
+    logOut()
+    .then(()=> {})
+    .catch(error => console.log(error))
+  }
     const Navlinks=<>
     <li><Link to='/' className='text-lg font-semibold font-poppins'>Assignments</Link></li>
      <li><Link to='/menu' className='text-lg font-semibold font-poppins'>Our Menu</Link></li>
@@ -56,7 +57,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end lg:flex hidden">
-          <li className='list-none' ><Link className='text-lg font-semibold font-poppins' to='/login'>Login</Link></li>
+        {
+              user ? <div className="dropdown dropdown-hover mr-4  dark:text-white">
+            <img src={user.photoURL} alt="" className='w-[50px] h-[50px] rounded-full border-2 p-1 border-yellow-600'/>
+              <ul tabIndex={0} className="dropdown-content z-[10] menu p-2 dark:bg-black shadow bg-base-100 rounded-box w-52">
+                <li><a>{user.displayName}</a></li>
+                <li><Link to='/login' className="btn font-lato bg-[#AF9F7B] text-[#2D394B] duration-500 hover:text-[#AF9F7B] hover:bg-[#2D394B] font-base text-xl" onClick={handleLogout} >Logout</Link></li>
+              
+              </ul>
+            </div>: <li className='list-none' ><Link className='text-lg font-semibold font-poppins' to='/login'>Login</Link></li>
+              
+            }
+        
           <Link to='/register' className="btn bg-neutral-600 text-lg font-semibold font-poppins text-white mx-2 ">Register</Link>
         </div>
       </div>

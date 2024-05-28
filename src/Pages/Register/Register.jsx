@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import { AuthContext } from './../Provider/AuthProvider';
+import { toast } from 'react-toastify';
+
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { AuthContext } from '../Provider/AuthProvider';
 // import { Helmet } from 'react-helmet-async';
 const Register = () => {
-// const {createUser,profile,setLoading}=useContext(AuthContext)
+const {createUser,profile,setLoading}=useContext(AuthContext)
 const [showPassword,setShowPassword]=useState(false)
     const { register, handleSubmit, formState: { errors },reset} = useForm();
   
@@ -17,17 +18,17 @@ const [showPassword,setShowPassword]=useState(false)
             const { name, Photo, Email, password } = data;
 
         
-            // await createUser(Email, password);
+            await createUser(Email, password);
            
-            // await profile(name, Photo);
-            // setLoading(false)
+            await profile(name, Photo);
+            setLoading(false)
         
             reset();
 
-            // toast.success("User created successfully");
+            toast.success("User created successfully");
         } catch (error) {
             console.error(error);
-            // toast.error(error.message);
+            toast.error(error.message);
         }
     };
 
@@ -37,13 +38,14 @@ const [showPassword,setShowPassword]=useState(false)
             <title>ArtRoof | Register</title>
           </Helmet> */}
      
-      <div className='flex justify-around md:flex-row flex-col gap-1 pt-16'>
-      <div>
-      {/* <Lottie animationData={lot2} loop={true} style={{height:500}} /> */}
+      <div className='flex justify-around md:flex-row flex-col gap-1 pt-12'>
+      <div className='md:w-1/2 w-full'>/
+   
+      <img src="https://i.ibb.co/94J6r2k/premium-photo-1661432980805-b892fc9a0765-q-80-w-2070-auto-format-fit-crop-ixlib-rb-4-0.jpg" className='w-full h-full' alt="" />
         </div>
          <div className='md:w-1/2 w-full -mt-6'>
-         <div className='flex justify-center items-center mt-10'>
-         <form onSubmit={handleSubmit(onSubmit)} className=' w-full md:w-full border-2 md:p-8 p-2 space-y-3 grid grid-cols-1 rounded-2xl'>
+         <div className='flex justify-center items-center mt-10 bg-[#d5dfed] h-[97%]'>
+         <form onSubmit={handleSubmit(onSubmit)} className=' w-full md:w-full h-[90vh] border-2 md:p-8 p-2 space-y-3 grid grid-cols-1 rounded-2xl'>
           <h1 className='text-2xl font-bold text-[#151515] dark:text-white font-poppins  duration-500 hover:text-[#AF9F7B] text-center'>Register Here</h1>
               <div>
                   <label htmlFor="" className='dark:text-white'>Name</label> <br />
@@ -87,7 +89,7 @@ const [showPassword,setShowPassword]=useState(false)
       
         
     
-          <input type="submit" value="Create an acoount" className='btn w-full font-lato sm:text-xl text-balance bg-[#AF9F7B] text-[#2D394B] duration-500 hover:text-[#AF9F7B] hover:bg-[#2D394B]'/>
+          <input type="submit" value="Create an acoount" className='btn w-full font-lato sm:text-xl text-balance bg-[#2D394B] text-[#b5cff3] duration-500 hover:text-[#0a0a0a] hover:bg-[#8599b7]'/>
           <p className='dark:text-white'>Already have an account?Please <Link to='/login' className='btn-link text-lg font-sora font-bold'>Sign In</Link></p>
         </form>
       
