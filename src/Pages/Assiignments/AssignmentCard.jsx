@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AssignmentCard = ({assignment}) => {
-    const {title,marks,image,difficulty}=assignment
+    const {title,marks,image,difficulty,_id}=assignment
     return (
         <div className="card bg-base-100 shadow-xl p-3">
   <figure><img src={image} alt="Shoes" className='w-full h-[250px]' /></figure>
@@ -12,9 +13,9 @@ const AssignmentCard = ({assignment}) => {
     <p className='text-lg font-poppins font-medium'>{difficulty}</p>
   </div>
   <div className='flex justify-between flex-wrap'>
-    <button className='btn btn-outline sm:text-lg text-base duration-500'>
+   <Link  to={`/update/${_id}`}> <button className='btn btn-outline sm:text-lg text-base duration-500'>
      Update
-    </button>
+    </button></Link>
     <button className='btn btn-outline sm:text-lg text-base duration-500'>
       Delete
     </button>
