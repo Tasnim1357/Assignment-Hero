@@ -4,6 +4,7 @@ import Root from "../Pages/Root/Root";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
+import Assignments from "../Pages/Assiignments/Assignments";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
           path:'/create',
           element:<CreateAssignment></CreateAssignment>
+        },
+        {
+          path:'/assignments',
+          element:<Assignments></Assignments>
         }
         
         

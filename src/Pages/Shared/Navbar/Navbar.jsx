@@ -14,7 +14,7 @@ const Navbar = () => {
     .catch(error => console.log(error))
   }
     const Navlinks=<>
-    <li><Link to='/' className='text-lg font-semibold font-poppins'>Assignments</Link></li>
+    <li><Link to='/assignments' className='text-lg font-semibold font-poppins'>Assignments</Link></li>
      <li><Link to='/menu' className='text-lg font-semibold font-poppins'>Our Menu</Link></li>
      <li><Link to='/order/salad' className='text-lg font-semibold font-poppins'>Order Food</Link></li>
      

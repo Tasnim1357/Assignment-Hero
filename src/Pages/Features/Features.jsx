@@ -13,7 +13,7 @@ const Features = () => {
         }
 
     })
-    console.log(features)
+    
     return (
         <div className='mt-12 space-y-8 px-2'>
             <h2 className='sm:text-5xl text-3xl font-poppins font-bold text-center'>Our Features</h2>
