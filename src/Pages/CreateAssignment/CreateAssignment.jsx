@@ -1,11 +1,15 @@
-import {React,useState} from 'react';
+import {React,useContext,useState} from 'react';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { AuthContext } from '../Provider/AuthProvider';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const CreateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
+    const {user}= useContext(AuthContext)
 
     const handleAdd=(e)=>{
         e.preventDefault()
@@ -15,15 +19,22 @@ const CreateAssignment = () => {
         const marks=form.marks.value;
         const image=form.image.value;
         const difficulty=form.difficulty.value;
-        const Subcategory_Name=form.subcategory_Name.value;
-        
-        const price=form.price.value;
-        const rating=form.rating.value;
-        const customization=form.customization.value;
-        const processing_time=form.processing_time.value;
-        const stockStatus=form.stockStatus.value;
-        const newArt={name,email,image,item_name,Subcategory_Name,short_description,price,rating,customization,processing_time,stockStatus}
-        console.log(newArt)
+        const date=form.date.value;
+        const creator=form.email.value;
+        const newAssignment={title,description,marks,image,difficulty,date,creator}
+        console.log(newAssignment)
+
+        axios.post(('http://localhost:5000/assignments'),newAssignment)
+        .then(res=>{
+           console.log(res.data)
+           if(res.data.insertedId){
+            Swal.fire({
+                title: "Great!",
+                text: "You created the Assignment!",
+                icon: "success"
+              });
+        }
+        })
     }
 
 
@@ -42,7 +53,7 @@ const CreateAssignment = () => {
             </div>
                 <div>
                 <label className='font-poppins text-lg dark:text-white'>Marks <br />
-                        <input type="text" placeholder='Marks' required name='marks' className='p-2 mt-2 w-full dark:text-black border-b-black border-b-2 outline-none' />
+                        <input type="number" placeholder='Marks' required name='marks' className='p-2 mt-2 w-full dark:text-black border-b-black border-b-2 outline-none' />
                     </label>
 
                 </div>
@@ -60,6 +71,8 @@ const CreateAssignment = () => {
                       
                     </label>
             </div>
+           
+                   
             <div>
             <label className='font-lato text-lg dark:text-white pb-24'>Submission Date <br />
                             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} required name='date'  />
@@ -67,6 +80,13 @@ const CreateAssignment = () => {
                     </label>
             </div>
            </div>
+           <div className='my-3'>
+                    <label className='font-lato text-lg dark:text-white'>Creator Email <br />
+                      
+                        <input type="email" placeholder='Email' name='email' value={user?.email} className='p-2 mt-2 w-full dark:text-black border-b-black border-b-2 outline-none' />
+                    </label>
+                 
+                    </div>
            <div>
            <label className='font-lato text-lg dark:text-white'>Thumbnail Image URL <br />
                         <input type="text" placeholder='Image' required name='image' className='p-2 mt-2 w-full dark:text-black border-b-black border-b-2 outline-none' />
@@ -77,6 +97,10 @@ const CreateAssignment = () => {
                         <input type="text" placeholder='Description' required name='description' className='p-2 mt-2 w-full dark:text-black border-b-black border-b-2 outline-none' />
                     </label>
            </div>
+           <div>
+                        
+            <input type="submit" name="" id="" value="Create" className="btn btn-block font-poppins text-lg bg-[#f0ede7] text-[#2D394B] duration-500 hover:text-[#AF9F7B] hover:bg-[#2D394B] mt-3" />
+             </div>
          </form>
         </div>
     );
