@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
 import AssignmentCard from './AssignmentCard';
+import Swal from 'sweetalert2';
 
 const Assignments = () => {
     // const {data: assignments = []}=useQuery({
@@ -15,7 +16,7 @@ const Assignments = () => {
 
     const [difficulty, setDifficulty] = useState('');
 
-    const { data: assignments = [], isLoading, isError } = useQuery({
+    const { data: assignments = [], isLoading, isError,refetch } = useQuery({
       queryKey: ['assignments', difficulty],
       queryFn: async () => {
         const res = await axios.get('http://localhost:5000/assignments', {
@@ -28,6 +29,35 @@ const Assignments = () => {
     const handleFilterChange = (event) => {
       setDifficulty(event.target.value);
     };
+
+    const handleDelete= (id)=>{
+
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(async(result) => {
+        if (result.isConfirmed) {
+          const res= await axios.delete(`http://localhost:5000/assignments/${id}`);
+          console.log(res.data);
+          if(res.data.deletedCount>0){
+            
+             Swal.fire({
+            title: "Deleted!",
+            text: "Your assignment has been deleted.",
+            icon: "success"
+          });
+          refetch()
+            
+          }
+         
+        }
+      });
+    }
   
   
     return (
@@ -50,7 +80,7 @@ const Assignments = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {
-                        assignments.map(assignment=><AssignmentCard key={assignment._id} assignment={assignment}></AssignmentCard>)
+                        assignments.map(assignment=><AssignmentCard key={assignment._id} assignment={assignment} handleDelete={handleDelete}></AssignmentCard>)
                     }
             </div>
         </div>
