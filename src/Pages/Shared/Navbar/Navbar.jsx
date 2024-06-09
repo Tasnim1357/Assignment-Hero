@@ -15,7 +15,7 @@ const Navbar = () => {
   }
     const Navlinks=<>
     <li><Link to='/assignments' className='text-lg font-semibold font-poppins'>Assignments</Link></li>
-     <li><Link to='/menu' className='text-lg font-semibold font-poppins'>Our Menu</Link></li>
+     <li><Link to='/mysubmitted' className='text-lg font-semibold font-poppins'>My Submitted Assignments</Link></li>
      <li><Link to='/order/salad' className='text-lg font-semibold font-poppins'>Order Food</Link></li>
      
      <li><Link to='/secret' className='text-lg font-semibold font-poppins'>Secret</Link></li>

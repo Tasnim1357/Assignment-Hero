@@ -39,7 +39,7 @@ const AssignmentCard = ({assignment,handleDelete}) => {
    
   </div>
     <div className="card-actions justify-end w-full">
-      <button className="btn btn-outline duration-500 sm:text-lg text-base w-full">View Assignment</button>
+    <Link to={`/details/${_id}`} className='w-full'>  <button className="btn btn-outline duration-500 sm:text-lg text-base w-full">View Assignment</button></Link>
     </div>
   </div>
 </div>
