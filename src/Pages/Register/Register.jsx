@@ -41,7 +41,7 @@ const [showPassword,setShowPassword]=useState(false)
       <div className='flex justify-around md:flex-row flex-col gap-1 pt-12'>
       <div className='md:w-1/2 w-full'>/
    
-      <img src="https://i.ibb.co/94J6r2k/premium-photo-1661432980805-b892fc9a0765-q-80-w-2070-auto-format-fit-crop-ixlib-rb-4-0.jpg" className='w-full h-full' alt="" />
+      <img src="https://i.ibb.co/xHPHHKk/sign-up-concept-illustration-114360-7965.jpg" className='w-full h-full' alt="" />
         </div>
          <div className='md:w-1/2 w-full -mt-6'>
          <div className='flex justify-center items-center mt-10 bg-[#d5dfed] h-[97%]'>

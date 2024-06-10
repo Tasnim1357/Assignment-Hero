@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import PendingCard from './PendingCard';
 
 const Pending = () => {
 
@@ -46,8 +47,10 @@ const Pending = () => {
                 isLoading ? <div className='flex justify-center'>
 <span className="loading loading-bars loading-lg"></span></div> 
 :
-<div>
-    
+<div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-24'>
+    {
+        pending.map(p=><PendingCard key={p._id} item={p}></PendingCard>)
+    }
 </div>
             }
          </div>
