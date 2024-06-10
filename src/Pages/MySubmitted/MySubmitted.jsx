@@ -3,7 +3,8 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import SubmitCard from './SubmitCard';
-
+import Lottie from 'lottie-react';
+import loader from '../../../public/Animation - 1718038883862.json'
 const MySubmitted = () => {
     const {user,loading}=useContext(AuthContext)
 
@@ -24,7 +25,7 @@ const MySubmitted = () => {
             <div>
                 {
                     isLoading? <div className='flex justify-center'>
-<span className="loading loading-bars loading-lg"></span></div> 
+<Lottie animationData={loader} loop={true} style={{height:500}} /></div> 
                     :
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                         {

@@ -3,7 +3,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import AssignmentCard from './AssignmentCard';
 import Swal from 'sweetalert2';
-import { AnimatePresence, motion } from "framer-motion"
+import loader from '../../../public/Animation - 1718038883862.json'
+import Lottie from 'lottie-react';
+
 
 const Assignments = () => {
   const [selectedId, setSelectedId] = useState(null)
@@ -76,8 +78,7 @@ const Assignments = () => {
 
             <div>
               {
-                isLoading ? <div className='flex justify-center'>
-<span className="loading loading-bars loading-lg"></span></div> 
+                isLoading ? <div className='flex justify-center'>  <Lottie animationData={loader} loop={true} style={{height:500}} /></div> 
 :
 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {
