@@ -42,7 +42,7 @@ const CreateAssignment = () => {
 
 
     return (
-        <div className='pt-24 space-y-8 px-3'>
+        <div className='pt-28 space-y-8 px-3'>
             <h2 className='text-3xl font-poppins font-semibold text-center'>Create Your Assignment</h2>
          <form onSubmit={handleAdd} className='shadow-lg rounded-2xl p-3'>
          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 my-5'>
@@ -63,7 +63,7 @@ const CreateAssignment = () => {
                   
             <label className='font-lato text-lg dark:text-white'> Assignment Difficulty level<br />
                         {/* <input type="text" placeholder='Subcategory_Name' required name='subcategory_Name' className='p-2 mt-2 dark:text-black w-full border-b-black border-b-2 outline-none' /> */}
-                        <select name="difficulty" className='dark:text-black w-full p-2 mt-2' id="cars">
+                        <select required name="difficulty" className='dark:text-black w-full p-2 mt-2' id="cars">
     <option value="Easy">Easy</option>
     <option value="Medium">Medium</option>
     <option value="Hard">Hard</option>

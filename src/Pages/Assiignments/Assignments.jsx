@@ -3,16 +3,11 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import AssignmentCard from './AssignmentCard';
 import Swal from 'sweetalert2';
+import { AnimatePresence, motion } from "framer-motion"
 
 const Assignments = () => {
-    // const {data: assignments = []}=useQuery({
-    //     queryKey:['assignments'],
-    //     queryFn:async ()=>{
-    //         const res =await axios.get('http://localhost:5000/assignments')
-    //         return res.data;
-    //     }
+  const [selectedId, setSelectedId] = useState(null)
 
-    // })
 
     const [difficulty, setDifficulty] = useState('');
 
@@ -78,13 +73,35 @@ const Assignments = () => {
                   <option value="Hard">Hard</option>
                 </select>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+
+            <div>
+              {
+                isLoading ? <div className='flex justify-center'>
+<span className="loading loading-bars loading-lg"></span></div> 
+:
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {
-                        assignments.map(assignment=><AssignmentCard key={assignment._id} assignment={assignment} handleDelete={handleDelete}></AssignmentCard>)
+                        assignments.map(assignment=> <AssignmentCard key={assignment._id} assignment={assignment} handleDelete={handleDelete}></AssignmentCard>
+                       
+                      )
                     }
+
+
+
+                    
             </div>
+              }
+            </div>
+            
         </div>
     );
+
+
+
+
+
+
+   
 };
 
 export default Assignments;

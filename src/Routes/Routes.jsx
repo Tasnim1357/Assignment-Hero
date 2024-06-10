@@ -9,6 +9,7 @@ import UpdateAssignment from "../Pages/Update/UpdateAssignment";
 import Details from "../Pages/Details/Details";
 import MySubmitted from "../Pages/MySubmitted/MySubmitted";
 import Pending from "../Pages/Pending/Pending";
+import Private from "./Private/Private";
 
 
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/create',
-          element:<CreateAssignment></CreateAssignment>
+          element:<Private><CreateAssignment></CreateAssignment></Private>
         },
         {
           path:'/assignments',
@@ -50,11 +51,11 @@ const router = createBrowserRouter([
         },
         {
           path: '/mysubmitted',
-          element:<MySubmitted></MySubmitted>
+          element:<Private><MySubmitted></MySubmitted></Private>
         },
         {
           path:'/pending',
-          element:<Pending></Pending>
+          element:<Private><Pending></Pending></Private>
         }
         
         

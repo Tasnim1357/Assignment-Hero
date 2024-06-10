@@ -18,7 +18,7 @@ const Navbar = () => {
      <li><Link to='/mysubmitted' className='text-lg font-semibold font-poppins'>My Submitted Assignments</Link></li>
      <li><Link to='/pending' className='text-lg font-semibold font-poppins'>Pending Assignments</Link></li>
      
-     <li><Link to='/secret' className='text-lg font-semibold font-poppins'>Secret</Link></li>
+     <li><Link to='/create' className='text-lg font-semibold font-poppins'>Create Assignment</Link></li>
     
      <li><Link>Item 6</Link></li>
      {/* <li><Link>Item 6</Link></li> */}
@@ -33,7 +33,7 @@ const Navbar = () => {
      } */}
     </>
     return (
-        <div className="navbar fixed z-10 bg-opacity-40 bg-black max-w-[1292px]  mx-auto    text-white">
+        <div className="navbar fixed z-10 bg-opacity-40 bg-black max-w-[1592px]  mx-auto    text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
