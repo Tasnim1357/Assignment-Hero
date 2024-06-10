@@ -25,7 +25,7 @@ const Pending = () => {
 
 
 
-    const { data: pending = [], isLoading } = useQuery({
+    const { data: pending = [], isLoading,refetch } = useQuery({
         queryKey: ['pending', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
@@ -49,7 +49,7 @@ const Pending = () => {
 :
 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-24'>
     {
-        pending.map(p=><PendingCard key={p._id} item={p}></PendingCard>)
+        pending.map(p=><PendingCard key={p._id} item={p} refetch={refetch}></PendingCard>)
     }
 </div>
             }
