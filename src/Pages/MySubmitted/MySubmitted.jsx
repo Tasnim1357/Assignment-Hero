@@ -18,7 +18,7 @@ const MySubmitted = () => {
           return data;
         },
       });
-      console.log(submitted)
+    
     return (
         <div className='pt-32 space-y-8 px-3'>
             <h1 className='text-4xl font-poppins font-semibold text-center'>My Submitted Assignments</h1>

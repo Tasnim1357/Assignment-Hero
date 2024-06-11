@@ -10,6 +10,7 @@ import Details from "../Pages/Details/Details";
 import MySubmitted from "../Pages/MySubmitted/MySubmitted";
 import Pending from "../Pages/Pending/Pending";
 import Private from "./Private/Private";
+import Allsubmitted from "../Pages/Submitted/Allsubmitted";
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         {
           path:'/pending',
           element:<Private><Pending></Pending></Private>
+        },
+        {
+          path:'/submitted',
+          element:<Allsubmitted></Allsubmitted>
         }
         
         

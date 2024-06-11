@@ -20,7 +20,7 @@ const Navbar = () => {
      
      <li><Link to='/create' className='text-lg font-semibold font-poppins'>Create Assignment</Link></li>
     
-     <li><Link>Item 6</Link></li>
+     <li><Link to={`/submitted`}  className='text-lg font-semibold font-poppins'>Submitted Assignments</Link></li>
      {/* <li><Link>Item 6</Link></li> */}
      {/* <li><Link>Item 6</Link></li> */}
      {/* {
