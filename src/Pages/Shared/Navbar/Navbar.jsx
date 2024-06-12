@@ -2,11 +2,15 @@ import {React, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../public/download.svg'
 import { AuthContext } from '../../Provider/AuthProvider';
-
-// import { FaShoppingCart } from "react-icons/fa";
-// import useCart from '../../../Hooks/useCart';
+// import { ThemeContext } from '../../Root/Root';
 const Navbar = () => {
   const {user,logOut}= useContext(AuthContext)
+  // const{handleTheme,theme}=useContext(ThemeContext)
+
+
+  // const handleThemeToggle = () => {
+  //   handleTheme(theme === 'dark' ? 'light' : 'dark');
+  // };
 
   const handleLogout=()=>{
     logOut()
@@ -33,7 +37,7 @@ const Navbar = () => {
      } */}
     </>
     return (
-        <div className="navbar fixed z-10 bg-opacity-40 bg-black max-w-[1592px]  mx-auto    text-white">
+        <div className="navbar fixed z-10 bg-opacity-40 bg-black max-w-[1592px]  mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

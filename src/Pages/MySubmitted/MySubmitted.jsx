@@ -12,7 +12,7 @@ const MySubmitted = () => {
         queryKey: ['submitted', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-          const { data } = await axios.get(`http://localhost:5000/myassignments/${user?.email}`, {
+          const { data } = await axios.get(`http://localhost:5000/myassignments/${user?.email}`,{withCredentials:true}, {
            
           });
           return data;

@@ -13,7 +13,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 // import lot1 from   '../../../public/Animation - 1713676970388.json'
 // import { Helmet } from 'react-helmet-async';
 const Login = () => {
-  const {createLogin,goolgeLogin,githubLogin}=useContext(AuthContext)
+  const {createLogin,goolgeLogin}=useContext(AuthContext)
   const [showPassword,setShowPassword]=useState(false)
 const location=useLocation()
 const navigate=useNavigate()

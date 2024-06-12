@@ -16,7 +16,7 @@ const Assignments = () => {
     const { data: assignments = [], isLoading, isError,refetch } = useQuery({
       queryKey: ['assignments', difficulty],
       queryFn: async () => {
-        const res = await axios.get('http://localhost:5000/assignments', {
+        const res = await axios.get('http://localhost:5000/assignments',{withCredentials: true}, {
           params: { difficulty },
         });
         return res.data;
