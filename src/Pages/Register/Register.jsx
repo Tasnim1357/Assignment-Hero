@@ -44,8 +44,8 @@ const [showPassword,setShowPassword]=useState(false)
       <img src="https://i.ibb.co/xHPHHKk/sign-up-concept-illustration-114360-7965.jpg" className='w-full h-full' alt="" />
         </div>
          <div className='md:w-1/2 w-full -mt-6'>
-         <div className='flex justify-center items-center mt-10 bg-[#d5dfed] h-[97%]'>
-         <form onSubmit={handleSubmit(onSubmit)} className=' w-full md:w-full h-[90vh] border-2 md:p-8 p-2 space-y-3 grid grid-cols-1 rounded-2xl'>
+         <div className='flex justify-center items-center mt-10  bg-[#d5dfed] h-[97%]'>
+         <form onSubmit={handleSubmit(onSubmit)} className=' w-full dark:bg-gray-800 md:w-full h-[90vh] border-2 md:p-8 p-2 space-y-3 grid grid-cols-1 rounded-2xl'>
           <h1 className='text-2xl font-bold text-[#151515] dark:text-white font-poppins  duration-500 hover:text-[#AF9F7B] text-center'>Register Here</h1>
               <div>
                   <label htmlFor="" className='dark:text-white'>Name</label> <br />

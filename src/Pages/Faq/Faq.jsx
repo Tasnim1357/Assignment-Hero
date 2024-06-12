@@ -3,7 +3,7 @@ import React from 'react';
 const Faq = () => {
     return (
         <div className='mt-12 space-y-8 px-2'>
-            <h2 className='sm:text-5xl text-3xl font-poppins font-bold text-center'>Frequently Asked Questions</h2>
+            <h2 className='sm:text-5xl text-3xl font-poppins font-bold dark:text-white text-center'>Frequently Asked Questions</h2>
             <p  className='text-lg text-gray-500 text-center'>Our website offers seamless assignment submission, real-time status tracking, and expert technical support. Collaborative assignments may be permitted based on guidelines.</p>
             <div className="collapse collapse-plus bg-white border border-blue-800 shadow-xl">
   <input type="radio" name="my-accordion-3" defaultChecked /> 

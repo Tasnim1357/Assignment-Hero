@@ -19,7 +19,7 @@ const Details = () => {
     }
     return (
         <div className='pt-28 space-y-8 px-3'>
-            <h1 className='text-4xl font-poppins font-semibold text-center'>Details of Assignment</h1>
+            <h1 className='text-4xl font-poppins font-semibold text-center dark:text-white'>Details of Assignment</h1>
             <div className="card lg:card-side bg-base-100 shadow-xl md:h-[60vh] h-[80vh]">
   <figure className='lg:w-1/2 w-full h-full'><img src={image} className='w-full h-full object-center' alt="Album"/></figure>
   <div className="card-body space-y-6">

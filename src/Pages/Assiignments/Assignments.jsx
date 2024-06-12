@@ -80,7 +80,7 @@ const Assignments = () => {
               {
                 isLoading ? <div className='flex justify-center'>  <Lottie animationData={loader} loop={true} style={{height:500}} /></div> 
 :
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {
                         assignments.map(assignment=> <AssignmentCard key={assignment._id} assignment={assignment} handleDelete={handleDelete}></AssignmentCard>
                        

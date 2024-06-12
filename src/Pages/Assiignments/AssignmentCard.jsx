@@ -16,7 +16,7 @@ const AssignmentCard = ({assignment,handleDelete}) => {
       });
     }
     return (
-        <div className="card bg-base-100 shadow-xl p-3">
+        <div className="card bg-base-100 shadow-xl p-3 dark:bg-black dark:text-white dark:border-2 dark:border-white">
   <figure><img src={image} alt="Shoes" className='w-full h-[250px]' /></figure>
   <div className="card-body p-3">
     <h2 className="card-title font-poppins font-semibold">{title}</h2>
@@ -25,21 +25,21 @@ const AssignmentCard = ({assignment,handleDelete}) => {
     <p className='text-lg font-poppins font-medium'>{difficulty}</p>
   </div>
   <div className='flex justify-between flex-wrap'>
-   <Link  to={`/update/${_id}`}> <button className='btn btn-outline sm:text-lg text-base duration-500'>
+   <Link  to={`/update/${_id}`}> <button className='btn dark:text-white btn-outline sm:text-lg text-base duration-500'>
      Update
     </button></Link>
 
     {
-        user?.email===creator? <button onClick={()=>handleDelete(_id)} className='btn btn-outline sm:text-lg text-base duration-500'>
+        user?.email===creator? <button onClick={()=>handleDelete(_id)} className='btn dark:text-white btn-outline sm:text-lg text-base duration-500'>
         Delete
-      </button>: <button onClick={handleNot} className='btn btn-outline sm:text-lg text-base duration-500'>
+      </button>: <button onClick={handleNot} className='btn dark:text-white btn-outline sm:text-lg text-base duration-500'>
       Delete
     </button>
     }
    
   </div>
     <div className="card-actions justify-end w-full">
-    <Link to={`/details/${_id}`} className='w-full'>  <button className="btn btn-outline duration-500 sm:text-lg text-base w-full">View Assignment</button></Link>
+    <Link to={`/details/${_id}`} className='w-full'>  <button className="btn dark:text-white btn-outline duration-500 sm:text-lg text-base w-full">View Assignment</button></Link>
     </div>
   </div>
 </div>

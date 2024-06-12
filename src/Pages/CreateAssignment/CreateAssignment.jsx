@@ -43,7 +43,7 @@ const CreateAssignment = () => {
 
     return (
         <div className='pt-28 space-y-8 px-3'>
-            <h2 className='text-3xl font-poppins font-semibold text-center'>Create Your Assignment</h2>
+            <h2 className='text-3xl font-poppins font-semibold text-center dark:text-white'>Create Your Assignment</h2>
          <form onSubmit={handleAdd} className='shadow-lg rounded-2xl p-3'>
          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 my-5'>
            <div >

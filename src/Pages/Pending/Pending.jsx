@@ -15,7 +15,7 @@ const Pending = () => {
         queryKey: ['pending', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-        const { data } = await axios.get('http://localhost:5000/pending',{withCredentials: true}, {
+        const { data } = await axios.get('http://localhost:5000/pending', {
             params: { status: 'pending' },
           });
           return data;
@@ -27,7 +27,7 @@ const Pending = () => {
     console.log(pending)
     return (
         <div className='pt-32 space-y-8 px-3'>
-         <h2 className='text-4xl font-poppins font-semibold text-center'>Pending Assignments</h2>   
+         <h2 className='text-4xl font-poppins font-semibold text-center dark:text-white'>Pending Assignments</h2>   
          <div>
             {
                 isLoading ? <div className='flex justify-center'>
