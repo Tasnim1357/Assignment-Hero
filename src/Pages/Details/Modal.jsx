@@ -41,7 +41,7 @@ import Swal from 'sweetalert2'
      }
 
      try {
-        const response = await axios.post('http://localhost:5000/submission',submitted, {withCredentials: true});
+        const response = await axios.post('https://assignment11-server-ten.vercel.app/submission',submitted, {withCredentials: true});
         console.log('Assignment submitted:', response.data);
 
         if(response.data.insertedId){

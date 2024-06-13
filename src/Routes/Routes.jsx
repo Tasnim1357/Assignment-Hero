@@ -44,12 +44,12 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<UpdateAssignment></UpdateAssignment>,
-          loader:({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
+          loader:({params})=> fetch(`https://assignment11-server-ten.vercel.app/assignments/${params.id}`)
         },
         {
           path:`/details/:id`,
           element:<Private><Details></Details></Private>,
-          loader:({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
+          loader:({params})=> fetch(`https://assignment11-server-ten.vercel.app/assignments/${params.id}`)
 
         },
         {

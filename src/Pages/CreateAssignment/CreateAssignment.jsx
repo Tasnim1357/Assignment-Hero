@@ -24,7 +24,7 @@ const CreateAssignment = () => {
         const newAssignment={title,description,marks,image,difficulty,date,creator}
         console.log(newAssignment)
 
-        axios.post(('http://localhost:5000/assignments'),newAssignment,{withCredentials:true})
+        axios.post(('https://assignment11-server-ten.vercel.app/assignments'),newAssignment,{withCredentials:true})
         .then(res=>{
            console.log(res.data)
            if(res.data.insertedId){

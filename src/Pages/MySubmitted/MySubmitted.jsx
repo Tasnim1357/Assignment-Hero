@@ -12,7 +12,7 @@ const MySubmitted = () => {
         queryKey: ['submitted', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-          const { data } = await axios.get(`http://localhost:5000/myassignments/${user?.email}`,{withCredentials:true}, {
+          const { data } = await axios.get(`https://assignment11-server-ten.vercel.app/myassignments/${user?.email}`,{withCredentials:true}, {
            
           });
           return data;

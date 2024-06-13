@@ -26,7 +26,7 @@ const UpdateAssignment = () => {
         const newAssignment={title,description,marks,image,difficulty,date}
         console.log(newAssignment)
 
-        axios.patch((`http://localhost:5000/assignments/${_id}`),newAssignment)
+        axios.patch((`https://assignment11-server-ten.vercel.app/assignments/${_id}`),newAssignment)
         .then(res=>{
            console.log(res.data)
            if(res.data.modifiedCount > 0){

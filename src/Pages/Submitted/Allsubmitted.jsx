@@ -10,13 +10,13 @@ const Allsubmitted = () => {
         queryKey: ['submitted', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-          const { data } = await axios.get(`http://localhost:5000/submitted`, {
+          const { data } = await axios.get(`https://assignment11-server-ten.vercel.app/submitted`, {
            
           });
           return data;
         },
       });
-      console.log(submitted)
+     
     //   let modifiedLink
     return (
         <div className='pt-32 space-y-8 px-3'>
