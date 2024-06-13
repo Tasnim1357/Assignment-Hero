@@ -15,9 +15,9 @@ const Pending = () => {
         queryKey: ['pending', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-        const { data } = await axios.get('http://localhost:5000/pending', {
-            params: { status: 'pending' },
-          });
+        const { data } = await axios.get('http://localhost:5000/pending?status=pending',
+          {withCredentials:true}
+        );
           return data;
         },
     });

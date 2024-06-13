@@ -41,7 +41,7 @@ import Swal from 'sweetalert2'
      }
 
      try {
-        const response = await axios.post('http://localhost:5000/submission',submitted);
+        const response = await axios.post('http://localhost:5000/submission',submitted, {withCredentials: true});
         console.log('Assignment submitted:', response.data);
 
         if(response.data.insertedId){
@@ -136,7 +136,7 @@ import Swal from 'sweetalert2'
   
  
   
-        <button className='btn btn-info'>Submit Assignment </button>
+        <button className='btn btn-info' disabled={user?.email=== item.creator}>Submit Assignment </button>
       </form>
               </div>
          

@@ -11,12 +11,14 @@ import MySubmitted from "../Pages/MySubmitted/MySubmitted";
 import Pending from "../Pages/Pending/Pending";
 import Private from "./Private/Private";
 import Allsubmitted from "../Pages/Submitted/Allsubmitted";
+import Errorpage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<Errorpage></Errorpage>,
       children:[
         {
             path:'/',
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
         },
         {
           path:`/details/:id`,
-          element:<Details></Details>,
+          element:<Private><Details></Details></Private>,
           loader:({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
 
         },

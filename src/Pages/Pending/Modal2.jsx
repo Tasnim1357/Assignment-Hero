@@ -34,7 +34,7 @@ import Swal from 'sweetalert2'
      }
 
      try {
-        const response = await axios.patch(`http://localhost:5000/marked/${item._id}`,submitted);
+        const response = await axios.patch(`http://localhost:5000/marked/${item._id}`,submitted,{withCredentials: true});
         console.log('Assignment updated:', response.data);
 
         if(response.data.modifiedCount>0){

@@ -39,7 +39,7 @@ const Assignments = () => {
         confirmButtonText: "Yes, delete it!"
       }).then(async(result) => {
         if (result.isConfirmed) {
-          const res= await axios.delete(`http://localhost:5000/assignments/${id}`);
+          const res= await axios.delete(`http://localhost:5000/assignments/${id}`,{withCredentials: true});
           console.log(res.data);
           if(res.data.deletedCount>0){
             
