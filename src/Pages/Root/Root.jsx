@@ -38,7 +38,7 @@ const Root = () => {
     
       const contextValue = { handleTheme,theme };
     return (
-        <div className='max-w-[1700px] dark:bg-black mx-auto sm:px-1 px-0 '> 
+        <div className='max-w-[1700px] dark:bg-black+ mx-auto sm:px-1 px-0 '> 
 
 <ThemeContext.Provider value={contextValue}>
 
